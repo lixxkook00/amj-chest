@@ -447,3 +447,33 @@ html{
         transform: translateX(-50%);
     }
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 1023px){
+    .card-slide{
+        margin-bottom: 0;
+    }
+
+    .card-quantity{
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+
+    .card-prev,
+    .card-next{
+        width: 12%;
+    }
+
+    .card-slide.active {
+        transform: scale(0.9) translateY(-6%);
+    }
+
+    .card-slide-open-confirm{
+        width: 80px
+    }
+
+    .card-award-item-value{
+        font-size: 10px
+    }
+}
