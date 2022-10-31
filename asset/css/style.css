@@ -438,6 +438,10 @@ html{
 	}
 }
 
+.card-award-item-bg.active{
+    animation: award-active 2s linear infinite alternate;
+}
+
 /* ANIMATION */
 @keyframes opening {
     0% {
@@ -445,6 +449,16 @@ html{
     }
     100% {
         transform: translateX(-50%);
+    }
+}
+
+@keyframes award-active {
+    0% {
+        
+    }
+    100% {
+        transform: scale(0.9);
+        filter: drop-shadow(5px -1px 5px #9ADCF9);
     }
 }
 

@@ -70,8 +70,7 @@ const clear = () => {
             element.classList.remove("active")
             element.classList.remove("opening")
 
-            // 
-            console.log(element.children[2])
+            // hidden optionals button
             element.children[2].style.display = 'unset'
         }
     })
@@ -174,7 +173,18 @@ queryAll('.card-slide-opennow').forEach((button) => {
         // hidden optional button
         // currentCard.children[2].style.display = 'none'
         
-        // show confirm button
-        query('#card-slide-open-confirm').style.display = 'block'
+        setTimeout(() => {
+            // show confirm button
+            query('#card-slide-open-confirm').style.display = 'block'
+
+            // active arward
+            const currentAward = query('#card-award-wrapper').children[12].children[0]
+            currentAward.classList.add('active')
+            // query('#card-award-wrapper').children.forEach((element) => {
+            //     console.log(element)
+            // })
+        },3000)
+
+
     }
 })
