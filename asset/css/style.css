@@ -1,0 +1,260 @@
+html,body{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+.centering{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-bg{
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 98%;
+    max-width: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-bg{
+    width: 100%;
+    height: auto;
+}
+
+.card-slide{
+    position: relative;
+    transition: all 0.3s linear;
+    transform: scale(0.9);
+    margin-bottom: 20%;
+}
+
+.card-slide.active{
+    transform: scale(1);
+}
+
+.card-slide.active .card-slide-open{
+    display: none;
+}
+
+.card-slide.active .card-slide-buttons{
+    display: flex;
+}
+
+.card-slide.disable{
+    opacity: 0.2;
+}
+
+.card-slide.hidden{
+    opacity: 0 !important;
+}
+
+.card-slide.opening{
+
+}
+
+.card-slide.opening .card-slide-logo,
+.card-slide.opening .card-quantity{
+    display: none;
+}
+
+.card-wrapper{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 87%;
+    overflow-x: clip;
+}
+
+.card-slide-bg{
+    width: 100%;
+    height: auto;
+}
+
+.card-slide-border{
+    position: absolute;
+    top: 51.3%;
+    left: 50%;
+    height: 51.2%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+    transition: all 0.5s ease-in-out;
+
+    display: none;
+}
+
+.card-slide-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+.card-slide-logo{
+    width: 50%;
+    margin-top: 20%;
+}
+
+.card-quantity{
+    background: url(../images/Quantity.png) no-repeat center center;
+    background-size: contain;
+    margin-top: 20px;
+    padding: 20px 40px;
+    color: #74C2D2;
+    font-weight: 700;
+}
+
+.card-slide-open{
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.5s ease;
+    transform: translate(-50%,0%);
+}
+
+.card-slide-open:hover{
+    cursor: pointer;
+    transform: translate(-50%,0%) scale(0.95);
+}
+
+.card-prev{
+    position: absolute;
+    width: 8.5%;
+    top: 50%;
+    left: 0.2%;
+    z-index: 10;
+}
+
+.card-next{
+    position: absolute;
+    width: 8.5%;
+    top: 50%;
+    right: 0.1%;
+    z-index: 10;
+}
+
+.card-slide-buttons{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.card-slide-opeing{
+    width: 45%;
+    transition: all 0.5s linear;
+}
+
+.card-slide-open-confirm{
+    width: 150px;
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.card-slide-open-confirm:hover{
+    cursor: pointer;
+    transform: scale(0.95) translate(-50%,-50%);
+}
+
+.button-hover{
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.button-hover:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.card-award{
+    position: absolute;
+    top: 32.7%;
+    left: 50%;
+    width: 87%;
+    height: 20%;
+    transform: translateX(-50%);
+    z-index: 3;
+    overflow-x: auto;
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.card-award-item,
+.card-award-wrapper{
+    height: 100%;
+}
+
+.card-award-wrapper{
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.card-award::-webkit-scrollbar {
+  display: none;
+}
+
+.card-award-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-award-item-bg{
+    height: 100%;
+    width: auto;
+}
+
+.card-award-item-value{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: system-ui;
+    font-weight: 800;
+}
+
+
+.card-award-wrapper.active{
+    animation : opening 3s ease-in-out forwards;
+    animation-timing-function: cubic-bezier(0.4,1,0.001,0.8);
+}
+
+
+/* ANIMATION */
+@keyframes opening {
+    0% {
+        
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
