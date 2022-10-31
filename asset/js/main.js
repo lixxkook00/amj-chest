@@ -35,6 +35,12 @@ var swiper1 = new Swiper(".card-swiper", {
 const query = document.querySelector.bind(document)
 const queryAll = document.querySelectorAll.bind(document)
 
+// LOADING
+window.addEventListener('load', (event) => {
+    setTimeout(() => {
+        query('#loading').style.display = "none"
+    },1000)
+})
 
 // HANDLE THE BEST OPEN CHEST EVER
 
@@ -72,6 +78,7 @@ const clear = () => {
 }
 
 // show reward text
+
 
 // handle confirm button
 query('#card-slide-open-confirm').onclick = () => {
