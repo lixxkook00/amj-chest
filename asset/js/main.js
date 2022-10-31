@@ -40,7 +40,42 @@ const queryAll = document.querySelectorAll.bind(document)
 
 // clear
 const clear = () => {
+    // hidden border
+    query('.card-slide-border').style.display = 'none';
 
+    // empty award HTML
+    query('#card-award-wrapper').innerHTML = ""
+    query('#card-award-wrapper').classList.remove('active')
+
+    // show other card again
+    queryAll('.card-slide.disable').forEach((element) => {
+        // console.log(element)
+        element.classList.remove("hidden")
+        element.classList.remove("disable")
+    })
+
+    // hidden confirm button
+    query('#card-slide-open-confirm').style.display = "none"
+
+    // restore current card
+    queryAll('.card-slide').forEach((element) => {
+        if(element.classList.length == 3){
+            // clear class
+            element.classList.remove("active")
+            element.classList.remove("opening")
+
+            // 
+            console.log(element.children[2])
+            element.children[2].style.display = 'unset'
+        }
+    })
+}
+
+// show reward text
+
+// handle confirm button
+query('#card-slide-open-confirm').onclick = () => {
+    clear()
 }
 
 // click to active card
@@ -130,7 +165,7 @@ queryAll('.card-slide-opennow').forEach((button) => {
         },300)
 
         // hidden optional button
-        currentCard.children[2].style.display = 'none'
+        // currentCard.children[2].style.display = 'none'
         
         // show confirm button
         query('#card-slide-open-confirm').style.display = 'block'

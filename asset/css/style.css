@@ -48,8 +48,12 @@ html{
     display: none;
 }
 
+.card-slide.active.opening{
+    display: none !important;
+}
+
 .card-slide.active .card-slide-buttons{
-    display: flex;
+    display: flex !important;
 }
 
 .card-slide.disable{
