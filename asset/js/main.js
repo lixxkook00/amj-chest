@@ -74,6 +74,9 @@ const clear = () => {
             element.children[2].style.display = 'unset'
         }
     })
+
+    // hidden award block
+    query('#card-award').style.display = "none"
 }
 
 // show reward text
@@ -122,16 +125,16 @@ const createAwardBlock = (finalAward) => {
     // create HTML
     let awardHTML = ''
     for(let i = 1;i<=20;i++){
-        let cardAmout = Math.floor(Math.random() * 9)*100
+        let cardAmount = Math.floor(Math.random() * 9)*100
 
-        // fake amout
-        i !== 13 ? cardAmout = Math.floor(Math.random() * 9 + 1)*100 : cardAmout = finalAward
+        // fake amount
+        i !== 13 ? cardAmount = Math.floor(Math.random() * 9 + 1)*100 : cardAmount = finalAward
 
         awardHTML += `
         <div class="card-award-item" style="width: ${widthPerCard}px;">
             <img src="/asset/images/${Math.floor(Math.random() * 3 + 1)}_1.png" alt="" class="card-award-item-bg">
             <div class="card-award-item-value">
-                ${cardAmout}
+                ${cardAmount}
             </div>
         </div>
         `
@@ -159,8 +162,8 @@ queryAll('.card-slide-opennow').forEach((button) => {
         query('.card-slide-border').style.display = 'flex'
 
 
-        // call API to get 
-        const finalAward = 69
+        // call API to get award
+        const finalAward = "1BTC"
 
         // create award block in html
         createAwardBlock(finalAward)
@@ -173,18 +176,19 @@ queryAll('.card-slide-opennow').forEach((button) => {
         // hidden optional button
         // currentCard.children[2].style.display = 'none'
         
+        // complete 
         setTimeout(() => {
             // show confirm button
             query('#card-slide-open-confirm').style.display = 'block'
 
-            // active arward
+            // active award
             const currentAward = query('#card-award-wrapper').children[12].children[0]
             currentAward.classList.add('active')
-            // query('#card-award-wrapper').children.forEach((element) => {
-            //     console.log(element)
-            // })
-        },3000)
 
+            // show award detail
+            
+
+        },3500)
 
     }
 })

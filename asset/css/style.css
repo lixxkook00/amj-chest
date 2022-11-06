@@ -141,6 +141,7 @@ html{
     width: 8.5%;
     top: 50%;
     left: 0.2%;
+    cursor: pointer;
     z-index: 10;
 }
 
@@ -150,6 +151,7 @@ html{
     top: 50%;
     right: 0.1%;
     z-index: 10;
+    cursor: pointer;
 }
 
 .card-slide-buttons{
@@ -195,7 +197,7 @@ html{
     position: absolute;
     top: 32.7%;
     left: 50%;
-    width: 87%;
+    width: 88.6%;
     height: 20%;
     transform: translateX(-50%);
     z-index: 3;
@@ -203,6 +205,31 @@ html{
     display: none;
     transition: all 0.5s ease-in-out;
 }
+
+.card-award::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    height: 100%;
+    width: 35%;
+    /* background-color: red; */
+    background-image: linear-gradient(90deg, #232E41 0%, rgba(52, 73, 94, 0.88) 91%);
+    z-index: 12;
+}
+
+.card-award::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0%;
+    height: 100%;
+    width: 35%;
+    /* background-color: red; */
+    background-image: linear-gradient(90deg, rgba(52, 73, 94, 0.88) 0%,#232E41  91%);
+    z-index: 12;
+}
+
 
 .card-award-item,
 .card-award-wrapper{
