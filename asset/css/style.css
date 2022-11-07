@@ -289,6 +289,18 @@ html{
     z-index: 99999;
 }
 
+#award-detail{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    transition: all 0.5s ease-in-out;
+
+    color: #fff;
+    font-weight: 800;
+    display: none;
+}
 
 #load {
   position:absolute;

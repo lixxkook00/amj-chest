@@ -77,6 +77,9 @@ const clear = () => {
 
     // hidden award block
     query('#card-award').style.display = "none"
+
+    // hidden award detail
+    query('#award-detail').style.display = 'none'
 }
 
 // show reward text
@@ -186,7 +189,8 @@ queryAll('.card-slide-opennow').forEach((button) => {
             currentAward.classList.add('active')
 
             // show award detail
-            
+            query('#award-detail').innerText = `You scored ${finalAward} box !!!`
+            query('#award-detail').style.display = 'block'
 
         },3500)
 
